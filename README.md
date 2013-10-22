@@ -21,7 +21,7 @@ Configuration:
 
 As an example, I am intalled a 32-bit Matlab under location 'C:\Program Files (x86)'.
 
-In Visual Studio, go to 'Project > Configuration Properties > C/C++ > General Addtional Include Directories' and add the following: 
+In Visual Studio, go to <strong>Project > Configuration Properties > C/C++ > General Addtional Include Directories</strong> and add the following: 
 
     C:\Program Files (x86)\MATLAB\R2009a\extern\include
     
