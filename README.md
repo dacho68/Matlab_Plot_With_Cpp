@@ -29,6 +29,6 @@ Go to <strong>Project > Configuration Properties > C/C++ > General > Addtional L
 
     C:\Program Files (x86)\MATLAB\R2009a\extern\lib\win32\microsoft
     
-Go to <strong>Project > Configuration Properties > C/C++ > General > Addtional Library Directories</strong> and add the following static libraries:
+Go to <strong>Project > Configuration Properties > C/C++ > Input > Addtional Dependencies</strong> and add the following static libraries:
 
     libmx.lib libmat.lib libeng.lib
