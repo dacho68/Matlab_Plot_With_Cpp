@@ -2,11 +2,14 @@
 #include <iostream>
 #include <math.h>
 using namespace std;
-// include directory: E:\Program Files\MATLAB\R2009a\extern\include
-// include directory: C:\Program Files (x86)\MATLAB\R2009a\extern\include
-// lib directory: E:\Program Files\MATLAB\R2009a\extern\lib\win32\microsoft
-// lib directory: C:\Program Files (x86)\MATLAB\R2009a\extern\lib\win32\microsoft
-// linker input: libmx.lib libmat.lib libeng.lib
+
+// Make sure you have changed the following settings: 
+// Include directory: 
+//      C:\Program Files (x86)\MATLAB\R2009a\extern\include
+// Lib directory: 
+//      C:\Program Files (x86)\MATLAB\R2009a\extern\lib\win32\microsoft
+// Linker input: 
+//      libmx.lib libmat.lib libeng.lib
 
 // Interface with Matlab
 #ifdef _CHAR16T
@@ -17,35 +20,42 @@ using namespace std;
 
 void main()
 {
-	const int N = 50;
-	double x[N],y[N];
-	int j = 1;
+	const int N = 360;
+	double x[N], y[N];
 	for (int i=0; i<N; i++)
 	{
-		x[i] = (i+1);
-		y[i] = sin(x[i]) + j * log(x[i]);
-		j *= -1;
+		// we will draw a sine function
+		x[i] = i;
+		y[i] = sin( x[i] * 3.14 / 180 ); 
 	}
 
-	Engine *ep;
-	if (!(ep=engOpen(NULL)))
+	// open matlab engine
+	Engine *ep = engOpen(NULL);
+	if ( !ep )
 	{
-		cout <<"Can't start Matlab engine!" <<endl;
+		cout << "Can't start Matlab engine!" <<endl;
 		exit(1);
 	}
 	
-	mxArray *xx = mxCreateDoubleMatrix(1,N, mxREAL); 
-	mxArray *yy = mxCreateDoubleMatrix(1,N, mxREAL); 
-	memcpy(mxGetPr(xx), x, N*sizeof(double)); 
-	memcpy(mxGetPr(yy), y, N*sizeof(double)); 
-	engPutVariable(ep, "xx",xx); 
-	engPutVariable(ep, "yy",yy); 
-	
+	// The fundamental type underlying MATLAB data
+	mxArray *xx = mxCreateDoubleMatrix(1, N, mxREAL); 
+	mxArray *yy = mxCreateDoubleMatrix(1, N, mxREAL); 
+
+	// copy data from c++ to matlab data
+	memcpy( mxGetPr(xx), x, N * sizeof(double) ); 
+	memcpy( mxGetPr(yy), y, N * sizeof(double) ); 
+
+	// draw the plot
+	engPutVariable( ep, "xx", xx ); 
+	engPutVariable( ep, "yy", yy ); 
 	engEvalString(ep, "plot(xx, yy); ");
+
+	// release data
 	mxDestroyArray(xx); 
 	mxDestroyArray(yy); 
 
-	cout <<"Press any key to exit!" <<endl;
-	cin.get();
+	system("pause");
+
+	// close matlab window
 	engClose(ep); 
 }
