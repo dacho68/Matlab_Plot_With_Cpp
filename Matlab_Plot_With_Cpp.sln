@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Matlab_Plot_With_Cpp", "Matlab_Plot_With_Cpp\Matlab_Plot_With_Cpp.vcxproj", "{FECE990F-414A-4D21-8500-8D10ECA53552}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FECE990F-414A-4D21-8500-8D10ECA53552}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FECE990F-414A-4D21-8500-8D10ECA53552}.Debug|Win32.Build.0 = Debug|Win32
+		{FECE990F-414A-4D21-8500-8D10ECA53552}.Release|Win32.ActiveCfg = Release|Win32
+		{FECE990F-414A-4D21-8500-8D10ECA53552}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
