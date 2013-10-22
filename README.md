@@ -1,4 +1,5 @@
-Matlab_Plot_With_Cpp
+Use Matlab frunction to draw a plot using C++
+
 ====================
 
 This is a extremely easy demo showing you how to use Matlab function to draw a plot using c++. You will be able to visualize the plot without even opening Matlab windows. It will just run in background and show you the plot you need. 
@@ -14,4 +15,13 @@ This project is build on the following platform:
  - Microsoft Visual Studio 2010
  - Matlab 2009b
 
+====================
+
 Configuration:
+As an example, I am intalled a 32-bit Matlab under location 'C:\Program Files (x86)'.
+In Visual Studio, go to 'Project > Configuration Properties > C/C++ > General Addtional Include Directories' and add the following: 
+    C:\Program Files (x86)\MATLAB\R2009a\extern\include
+Go to 'Project > Configuration Properties > C/C++ > General > Addtional Library Directories' and add the following:
+    C:\Program Files (x86)\MATLAB\R2009a\extern\lib\win32\microsoft
+Go to 'Project > Configuration Properties > C/C++ > General > Addtional Library Directories' and add the following static libraries:
+    libmx.lib libmat.lib libeng.lib
