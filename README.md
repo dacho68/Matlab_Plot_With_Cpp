@@ -18,10 +18,17 @@ This project is build on the following platform:
 ====================
 
 Configuration:
+
 As an example, I am intalled a 32-bit Matlab under location 'C:\Program Files (x86)'.
+
 In Visual Studio, go to 'Project > Configuration Properties > C/C++ > General Addtional Include Directories' and add the following: 
+
     C:\Program Files (x86)\MATLAB\R2009a\extern\include
+    
 Go to 'Project > Configuration Properties > C/C++ > General > Addtional Library Directories' and add the following:
+
     C:\Program Files (x86)\MATLAB\R2009a\extern\lib\win32\microsoft
+    
 Go to 'Project > Configuration Properties > C/C++ > General > Addtional Library Directories' and add the following static libraries:
+
     libmx.lib libmat.lib libeng.lib
