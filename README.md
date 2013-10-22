@@ -25,10 +25,10 @@ In Visual Studio, go to <strong>Project > Configuration Properties > C/C++ > Gen
 
     C:\Program Files (x86)\MATLAB\R2009a\extern\include
     
-Go to 'Project > Configuration Properties > C/C++ > General > Addtional Library Directories' and add the following:
+Go to <strong>Project > Configuration Properties > C/C++ > General > Addtional Library Directories</strong> and add the following:
 
     C:\Program Files (x86)\MATLAB\R2009a\extern\lib\win32\microsoft
     
-Go to 'Project > Configuration Properties > C/C++ > General > Addtional Library Directories' and add the following static libraries:
+Go to <strong>Project > Configuration Properties > C/C++ > General > Addtional Library Directories</strong> and add the following static libraries:
 
     libmx.lib libmat.lib libeng.lib
